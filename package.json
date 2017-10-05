@@ -13,7 +13,7 @@
     }
   },
   "scripts": {
-    "start": "node --trace-warnings ./server/app.js",
+    "start": "node ./server/app.js",
     "client": "webpack-dev-server",
     "server": "nodemon ./server/app.js",
     "clean": "rimraf build",
