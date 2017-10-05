@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { FETCH_STATS, ERROR, LOADING } from '../constants/actionTypes'
-import { SERVER_URL } from ''
+import { SERVER_URL } from '../../../keys'
 
 export const fetchStats = params => async dispatch => {
   dispatch({ type: LOADING })
