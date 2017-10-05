@@ -5,6 +5,8 @@ import { SERVER_URL } from '../../../keys'
 export const fetchStats = params => async dispatch => {
   dispatch({ type: LOADING })
   try {
+    console.log('POST request to:', SERVER_URL)
+    console.log('JSON to be sent:', params)
     const { data } = await axios.post(SERVER_URL, params)
     return dispatch({ type: FETCH_STATS, payload: data })
   } catch (err) {
