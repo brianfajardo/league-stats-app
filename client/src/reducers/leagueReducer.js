@@ -1,9 +1,10 @@
-import { FETCH_STATS, ERROR } from '../constants/actionTypes'
+import { FETCH_STATS, ERROR, LOADING } from '../constants/actionTypes'
 
 const initialState = {
   error: null,
   recentMatches: null,
-  summoner: null
+  summoner: null,
+  loading: false
 }
 
 const leagueReducer = (state = initialState, action) => {
@@ -12,12 +13,19 @@ const leagueReducer = (state = initialState, action) => {
       return {
         ...state,
         recentMatches: action.payload.recentMatches,
-        summoner: action.payload.summoner
+        summoner: action.payload.summoner,
+        loading: false
+      }
+    case LOADING:
+      return {
+        ...state,
+        loading: true
       }
     case ERROR:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        loading: false
       }
     default:
       return state

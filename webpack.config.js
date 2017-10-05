@@ -5,8 +5,7 @@ module.exports = {
   entry: ['babel-polyfill', './client/index.js'],
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-    publicPath: '/public'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [

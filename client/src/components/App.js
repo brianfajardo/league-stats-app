@@ -4,7 +4,15 @@ import { fetchStats } from '../actions'
 import regionOptions from '../constants/regionOptions'
 
 // Components
-import { Container, Input, Dropdown, Button, Image } from 'semantic-ui-react'
+import {
+  Container,
+  Input,
+  Dropdown,
+  Button,
+  Image,
+  Dimmer,
+  Loader
+} from 'semantic-ui-react'
 import Header from './Header'
 import Card from './Card'
 
@@ -35,7 +43,7 @@ class App extends Component {
   }
 
   render() {
-    const { summoner, recentMatches } = this.props
+    const { summoner, recentMatches, loading } = this.props
     return (
       <Container>
         <Header />
@@ -46,10 +54,14 @@ class App extends Component {
             placeholder="region"
             options={regionOptions}
             onChange={this.onDropdownChange}
-          />
-          <Button inverted color="green" onClick={this.onSubmit}>
-            Find stats
-          </Button>
+          />{' '}
+          {loading ? (
+            <Loader active inline />
+          ) : (
+            <Button inverted color="green" onClick={this.onSubmit}>
+              Find stats
+            </Button>
+          )}
         </div>
         {summoner &&
           recentMatches && (
@@ -66,8 +78,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  const { summoner, recentMatches } = state.league
-  return { summoner, recentMatches }
+  const { summoner, recentMatches, loading } = state.league
+  return { summoner, recentMatches, loading }
 }
 
 export default connect(mapStateToProps, { fetchStats })(App)

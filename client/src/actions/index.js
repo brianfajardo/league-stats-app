@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { FETCH_STATS, ERROR } from '../constants/actionTypes'
+import { FETCH_STATS, ERROR, LOADING } from '../constants/actionTypes'
 import { SERVER_URL } from '../../../keys'
 
 export const fetchStats = params => async dispatch => {
+  dispatch({ type: LOADING })
   try {
     const { data } = await axios.post(SERVER_URL, params)
     return dispatch({ type: FETCH_STATS, payload: data })
