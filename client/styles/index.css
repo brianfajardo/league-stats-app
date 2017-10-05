@@ -1,0 +1,58 @@
+body,
+html {
+  margin-top: 25px;
+  background: #272727;
+  color: white;
+}
+
+.header > h1 {
+  font-size: 30px;
+}
+
+.search {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.results {
+  margin-top: 25px;
+}
+
+.results #summoner {
+  font-size: 50px;
+  text-align: center;
+}
+
+.results #summoner > span {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.results .cards {
+  margin-bottom: 45px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.results .cards > #header {
+  font-size: 35px;
+}
+
+.results .cards > #header > p {
+  float: right;
+  font-size: 15px;
+}
+
+#visionScore {
+  font-size: 25px;
+}
+
+.stats {
+  height: 175px;
+}
+
+.individual-stats {
+  float: left;
+  width: 50%;
+}
