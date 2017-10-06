@@ -1,4 +1,6 @@
-Instructions to view:
+Heroku demo: https://ruby-sightstone.herokuapp.com/
+
+Instructions for development:
 
 1. Download or clone repo
 2. cd to folder
