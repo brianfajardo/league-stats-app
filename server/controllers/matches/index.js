@@ -6,10 +6,10 @@ const {
 } = require('../../helpers')
 
 module.exports = {
-  getLatestRankedMatches(req, res) {
+  async getLatestRankedMatches(req, res) {
     const { summonerName, region } = req.body
 
-    const summonerObj = getAccount(summonerName, region)
+    const summonerObj = await getAccount(summonerName, region)
     const { accountId } = summonerObj
 
     if (!accountId) {
@@ -19,7 +19,7 @@ module.exports = {
     // Returns summoners' 15 most recent played ranked matches.
     // NOTE: edge-case exists where summoner has not played any
     // recent ranked games.
-    const matches = getMatches(accountId, region)
+    const matches = await getMatches(accountId, region)
 
     if (!matches) {
       res

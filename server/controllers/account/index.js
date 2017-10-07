@@ -1,7 +1,7 @@
 const { getAccount } = require('../../helpers')
 
 module.exports = {
-  getSummonerProfile(req, res) {
+  async getSummonerProfile(req, res) {
     let account
     const { summonerName, region } = req.body
     const regEx = /^[0-9\\p{L} _\\.]+$/
@@ -16,7 +16,7 @@ module.exports = {
     }
 
     // Fetch account object from Riot API with helper.
-    summonerObj = getAccount(summonerName, region)
+    summonerObj = await getAccount(summonerName, region)
 
     res.send(summonerObj).status(200)
   }
