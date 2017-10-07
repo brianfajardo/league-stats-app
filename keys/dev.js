@@ -1,4 +1,4 @@
 module.exports = {
-  RIOT_API_KEY: 'RGAPI-b4613db3-b5c7-4ae1-8885-ff7becf05a9b',
-  SERVER_URL: 'http://localhost:8000/api/wardstats'
+  RIOT_API_KEY: 'RGAPI-15ac5f97-34a0-4aa1-ba88-003ba17d8859',
+  SERVER_URL: 'http://localhost:8000/api/matches/wardstats'
 }
